@@ -1,0 +1,21 @@
+<div>
+  <p>
+    Enter to do title
+    <input
+      type="text"
+      #input
+      placeholder="Enter to do name"
+      [(ngModel)]="name"
+      (keyup.enter)="insertElement(input.value)"
+    />
+    <button mat-flat-button>Basic</button>
+  </p>
+
+  <mat-selection-list #shoes>
+    @for (item of todos(); track item) {
+    <mat-list-option> {{ item }}</mat-list-option>
+    } @empty {
+    <mat-list role="list">There are no Todos in list.</mat-list>
+    }
+  </mat-selection-list>
+</div>
